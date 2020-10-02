@@ -1,14 +1,14 @@
 <?php
   // Prendi la parola dal comman line
-  $_GET = ["word"];
+  $_GET["word"];
   // variabile sostitutiva
   $censura = "* * *";
   // paragrafo
   $paragraph = "Ciao come stai secco, il sole e' bello e le caprette gironzolano felici.";
   //cerca pa parola nel paragrafo
-  strpos($paragraph,$_GET);
+  $wordFind = strpos($paragraph,$_GET);
   // sostituisce la stringa cercata con i * * *
-  str_replace($_get,$censura,$paragraph)
+  $newParagraph = str_replace($wordFind,$censura,$paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +20,9 @@
 
   <body>
     <h1>Esercizio:</h1>
-    <h2>Creare una variabile con un paragrafo di testo. Visualizzare a schermo il paragrafo con la relativa lunghezza e sostituire la badword passata in GET con tre *.</h2>
+    <h3>Creare una variabile con un paragrafo di testo. Visualizzare a schermo il paragrafo con la relativa lunghezza e sostituire la badword passata in GET con tre *.</h3>
 
-    <p><?php echo $paragraph; ?>,<?php strlen($paragraph); ?></p>
+    <p><?php echo $newParagraph; ?></p>
+    <p>La lunghezza delle stringa e' di <?php echo strlen($paragraph); ?> caratteri.</p>
   </body>
 </html>
